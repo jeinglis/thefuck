@@ -1,13 +1,17 @@
 from socket import *
-from .clientFacade import receiveCommand
+from .clientFacade import ClientFacade
 
-serverPort - 12000
-serverSocket = socket(AF_INET, SOCK_STREAM)
-serverSocket.bind(('', serverPort))
-serverSocket.listen(1)
-print 'The Server is ready to receiver'
-while 1:
-        connectionSocket, addr = serverSocket.accept()
-        command - connectionSocket.recv(1024)
-        receiveCommand(command, connectionSocket)
-        connectionSocket.close()
+class ServerReceiver():
+    serverSocket = socket(AF_INET, SOCK_STREAM)
+    def listenForConnection():
+        serverPort - 12000
+        serverSocket.bind(('', serverPort))
+        serverSocket.listen(1)
+        print 'The Server is ready to receiver'
+        while 1:
+            connectionSocket, addr = serverSocket.accept()
+            command - connectionSocket.recv(1024)
+            sendForCorrection(command, connectionSocket)
+
+    def sendForCorrection(command, connectionSocket):
+            receiveCommand(command, connectionSocket)
