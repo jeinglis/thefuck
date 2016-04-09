@@ -1,4 +1,5 @@
 from socket import *
+import pickle
 from .receiver import Receiver
 
 class Sender():
@@ -8,7 +9,7 @@ class Sender():
     def sendCommand(toBeCorrected):
         clientSocket = socket(AF_INT, SOCK_STREAM)
         clientSocket.connect((server_IP, serverPort))
-        clientSocket.send(toBeCorrected)
-        Receiver.receive_from_server()
+        clientSocket.send(pickle.loads(toBeCorrected))
+        Receiver.receive_from_server(clientSocket)
 
 
