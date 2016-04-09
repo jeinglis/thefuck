@@ -9,7 +9,7 @@ class Sender():
     def sendCommand(toBeCorrected):
         clientSocket = socket(AF_INT, SOCK_STREAM)
         clientSocket.connect((server_IP, serverPort))
-        clientSocket.send(pickle.loads(toBeCorrected))
+        clientSocket.send(pickle.dumps(toBeCorrected))
         Receiver.receive_from_server(clientSocket)
 
 
