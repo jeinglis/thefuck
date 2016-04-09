@@ -2,10 +2,9 @@ from .sender import Sender
 
 class ServerFacade:
 
-def send_to_server(toBeCorrected):
-    Sender.connect_to_server(toBeCorrected)
+    def send_to_server(toBeCorrected):
+        Sender.sendCommand(toBeCorrected)
 
-def receive_corrected(corrected):
-
-def send_corrected(corrected):
+    def receive_corrected(corrected):
+        return corrected
 
