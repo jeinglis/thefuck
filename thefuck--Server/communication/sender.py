@@ -5,5 +5,5 @@ class ServerSender():
         connectionSocket.send(len(correctedCommands))
         for items in correctedCommands
           connectionSocket.send(items)
-          connectionSocket.close()
+        connectionSocket.close()
     
