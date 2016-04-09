@@ -3,8 +3,8 @@ from .clientFacade import ClientFacade
 
 class ServerReceiver():
     serverSocket = socket(AF_INET, SOCK_STREAM)
-    def listenForConnection():
-        serverPort - 12000
+    def listenForConnection(port):
+        serverPort - port
         serverSocket.bind(('', serverPort))
         serverSocket.listen(1)
         print 'The Server is ready to receiver'
