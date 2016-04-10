@@ -1,11 +1,9 @@
 from socket import *
 import pickle
-from .serverFacade import ServerFacade
+from .serverFacade import receive_corrected
 
 
-class ClientReciever():
-    
-    def receive_from_server(client_socket):
+def receive_from_server(client_socket):
         # messageCount = 0
         # commandList = []
 
@@ -20,9 +18,9 @@ class ClientReciever():
         #           clientSocket.close()
         #           break
 
-        corrected = pickle.loads(client_socket.recv(1024))
-        client_socket.close()
-        return_corrected(corrected)
+    corrected = pickle.loads(client_socket.recv(1024))
+    client_socket.close()
+    return_corrected(corrected)
 
-    def return_corrected(corrected_list):
-        ServerFacade.receive_corrected(corrected_list)
+def return_corrected(corrected_list):
+    ServerFacade.receive_corrected(corrected_list)
