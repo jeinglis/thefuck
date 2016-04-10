@@ -1,4 +1,4 @@
-from thefuck.thefuck--server.communication.receiver import listen_for_connection
+from communication.receiver import listen_for_connection
 import sys
 
 
