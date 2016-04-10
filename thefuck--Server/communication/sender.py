@@ -1,11 +1,13 @@
 from socket import *
 import pickle
 
+
 class ServerSender():
-    def sendToClient(connectionSocket, correctedCommands):
+
+    def send_to_client(connection_socket, corrected_commands):
         # connectionSocket.send(str(len(correctedCommands)))
         # for items in correctedCommands:
         #     connectionSocket.send(pickle.dumps(items))
-        connectionSocket.send(pickle.dumps(correctedCommands))
-        connectionSocket.close()
+        connection_socket.send(pickle.dumps(corrected_commands))
+        connection_socket.close()
     

@@ -1,7 +1,9 @@
 from .corrector import get_corrected_commands
-from .sender import sendToClient
+from .sender import send_to_client
+
 
 class ClientFacade():
-    def receiveCommand(command, connectionSocket):
-        correctedCommands = get_corrected_commands(command)
-        sendToClient(connectionSocket, correctedCommands)
+
+    def receive_command(command, connection_socket):
+        corrected_commands = get_corrected_commands(command)
+        send_to_client(connection_socket, corrected_commands)
